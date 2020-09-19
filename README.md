@@ -1,4 +1,5 @@
 # -test-specifications
+Repository designed to store test specifications - QA
 Test specifications / Test roadmap
 
 1- Life Period
