@@ -1,0 +1,95 @@
+TEST SCREENING - LIFE PERIOD
+
+//Story: A developer set to convert number to text.
+    A developer needs to write a function for an age converter (integer number) in
+    life span (text).
+
+
+    //General scenario: Creat a trigger record flow asking user age. After that, create code that runs the algorithm to save the age.
+    def “rotate function to convert age(integer number) to lifetime(text)
+    
+
+        //Scenario 1: Se a idade for zero, ele deve retornar {INVALID}
+        //criar fluxo de registro e código com algoritmo if (age = 0) {INVALID} para converter idade (número inteiro) em lifetime (text). If the age is zero, it should return “INVALID”.
+        Given: Save user response equal 0;
+        ServiceWorkerRegistration = Save.age(equalzero)
+        
+        
+        //when the user responds your age equal zero, run code
+        When: use user response and run the code with the algorithm ; if (age = 0) {INVALID}
+        code ; if (age = 0){INVALID}
+
+
+        //check if the answer was zero and the function returned “INVALID”
+        Then: Code should return {INVALID}, “This is not a valid age” message appears, and new registration flow starts reminding the user that the age must be greater than 0.
+        service return {INVALID}; inform user
+
+        {
+            else
+        }
+
+        //Scenario 2: Se a idade for maior que zero e menor que 16, a função deve retornar {CHILDREN}
+        //Usar o mesmo fluxo de registro e o código com algoritmo if (age > 0 and > 16) {CHILDREN}. If the age is greater than zero and less than 16, the function must return {CHILDREN}
+        Given: Save user response whatever greater zero and less 16;
+        ServiceWorkerRegistration = Save.age(whatever greater zero and less 16)
+        
+        
+        //when the user responds your age greater zero and less 16, run code
+        When: use user response and run the code with the algorithm ; if (age > 0 AND age < 16) {CHILDREN}
+        code ; if (age > 0 AND age < 16){CHILDREN}
+
+
+        //check if the answer was age greater zero and less 16 and the function returned “CHILDREN”
+        Then: Code should return {CHILDREN}, “This is not a valid age” message appears, and new registration flow starts reminding the user that the age must be greater than 0.
+        service return {CHILDREN}; inform user
+
+        {
+            else
+        }
+
+        //Scenario 3: Se a idade for maior ou igual a 16 e menor que 60, a função deve retornar “ADULT”
+        //Usar o mesmo fluxo de registro e o código com algoritmo if (age ≥ 16 and > 60) {ADULT}. If the age is greater or equal 16 and less than 60, the function must return {ADULT}
+        Given: Save user response whatever greater or equal 16 and less 60;
+        ServiceWorkerRegistration = Save.age(whatever greater or equal 16 and less 60)
+
+        
+        
+        //when the user responds your age greater or equal 16 and less 60, run code
+        When: use user response and run the code with the algorithm ; if (age ≥ 16 and > 60) {ADULT}
+        code ; if (age ≥ 16 and > 60){CHILDREN}
+
+
+        //check if the answer was age greater or equal 16 and less 60 and the function returned “ADULT”
+        Then: Code should return {ADULT}
+        service return {ADULT}; inform user
+
+        {
+            else
+        }
+
+        //Scenario 4: Se a idade for maior ou igual a 60, a função deve retornar “OLDER PEOPLE”
+        //Usar o mesmo fluxo de registro e o código com algoritmo if (age ≥ 16 and > 60) {ADULT}. If the age is greater or equal 16 and less than 60, the function must return {ADULT}
+        Given: Save user response whatever greater or equal 16 and less 60;
+        ServiceWorkerRegistration = Save.age(whatever greater or equal 16 and less 60)
+
+        
+        //when the user responds your age greater or equal 60 and less 110, run code
+        When: use user response and run the code with the algorithm ; if (age ≥ 60 and > 110) {OLDER_PEOPLE}
+        code ; if (age ≥ 60 and > 110){OLDER PEOPLE}
+
+        //check if the answer was age greater or equal 16 and less 60 and the function returned “ADULT”
+        Then: Code should return {OLDER_PEOPLE}
+        service return {OLDER_PEOPLE}; inform user
+
+        {
+            OR
+        }
+        
+        //when the user responds your age greater 110, run code
+        When: user answer his age being greater 100
+        code ; if (age ≥ 60 and > 110){OLDER PEOPLE}
+
+        //check if the answer was age greater 110 and the function returned “INVALID”
+        Then: Code should return {INVALID}
+        service return {INVALID};  “This is not a valid age” message appears, and new registration flow starts reminding the user that the age must be greater than 0.
+        service return {INVALID}; inform user

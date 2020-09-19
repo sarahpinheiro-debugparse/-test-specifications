@@ -1,0 +1,44 @@
+TEST SCREENING - THERMOSTAT
+
+//Story: Your team is developing software for a thermostat controller that controls a
+switch to turn the heating on and off.
+
+
+    //General scenario: Creat a switch to connect a thermostat and a heater. After that, create code that runs the algorithm to save the temperature every 10 minutes.
+    def “rotate function to connect a thermostat and a heater and save result every 10 minutes.
+
+
+        //Scenario 1: If the temperature is greater than or equal to 23 ° C, the heater must be turned {OFF}.
+        //use switch to save temperature every 10 minutes.
+        Given: Save temperature;
+        ServiceWorkerRegistration = Save.temperature(greater than or equal to 23 ° C)
+        
+        
+        //thermostat shows temperature greater than or equal to 23 ° C
+        When: thermostat shows temperature greater than or equal to 23 ° C
+        code ; if (temperature ≥ 23 ° C)
+
+
+        //check temperature, if temperature is greater than or equal to 23 ° C, the heater must be turned {OFF}.
+        Then: switch captures the temperature and turns off the heater
+        service turn {OFF}
+        
+        {
+            else
+        }
+
+        //Scenario 2: If the temperature drops below 5 ° C, the heater must be switched {ON}
+        //use switch to save temperature every 10 minutes.
+        Given: Save temperature;
+        ServiceWorkerRegistration = Save.temperature(temperature < 5 ° C)
+        
+        
+        //thermostat shows temperature drops below 5 ° C
+        When: thermostat shows temperature drops below 5 ° C
+        code ; if (temperature < 5 ° C)
+
+
+        //check temperature, if temperature drops below 5 ° C, the heater must be turned {ON}.
+        Then: switch captures the temperature and turns off the heater
+        service turn {ON}
+
